@@ -1,22 +1,17 @@
 package Practice;
 
-import java.awt.Window;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TC006 {
+
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
 		String url="https://demowebshop.tricentis.com";
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver=new ChromeDriver();  
@@ -63,31 +58,41 @@ public class TC006 {
 	    
 	    driver.findElement(By.xpath("(//input[@type='radio'])[3]")).click();
 	    driver.findElement(By.id("add-to-cart-button-71")).click();
+	    
 //clicked on shopping cart
+	    
 	    driver.findElement(By.xpath("(//a[@class='ico-cart'])[1]")).click();
 	    
-	    String str=driver.findElement(By.xpath("(//div[@class='attributes'])[3]")).getText();
+	    String product=driver.findElement(By.xpath("(//div[@class='attributes'])[3]")).getText();
 	    String str2=driver.findElement(By.xpath("(//div[@class='attributes'])[4]")).getText();
-	    System.out.println(str);
-	    System.out.println("--------------------------------------");
+	    System.out.println(product);
+	    System.out.println("--------------------------------------");  
 	    System.out.println(str2);
 	 
 // Clicked on edit option	    
 	    driver.findElement(By.xpath("(//div[@class='edit-item']/child::a)[2]")).click();
 	    
 	    Thread.sleep(3000);
-        Select slt2=new Select(driver.findElement(By.id("product_attribute_71_9_15")));
-       slt2.selectByValue("46");
-	    driver.findElement(By.xpath("//input[@class='textbox']")).sendKeys("40");
-	    
+        Select slt2=new Select(driver.findElement(By.id("product_attribute_71_9_15")));  
+       slt2.selectByValue("45");
+	    WebElement value=driver.findElement(By.xpath("//input[@class='textbox']"));
+	    value.clear();
+	    value.sendKeys("40");
 	    driver.findElement(By.xpath("(//input[@type='radio'])[4]")).click();
 	    driver.findElement(By.id("add-to-cart-button-71")).click();
-	     
-	    String str3=driver.findElement(By.xpath("(//div[@class='attributes'])[3]")).getText();
+	    
+//	clicked on shopping cart    
+	    
+	    driver.findElement(By.xpath("(//a[@class='ico-cart'])[1]")).click();
+	    Thread.sleep(3000);
+	    String str3=driver.findElement(By.xpath("(//div[@class='attributes'])[4]")).getText();
 	    System.out.println("================================");
-	    System.out.println(str3);
+	    System.out.println(str3);  
 	     
 	     
 
 }
-}
+
+	}
+
+
