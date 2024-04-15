@@ -1,4 +1,4 @@
-package Practice;
+package Tasks;
 
 import java.util.List;
 import java.util.Random;
@@ -85,7 +85,7 @@ public class TC007 {
 		     
 //close the browser
 		driver.close();
-		driver.quit();                 
+		driver.quit();                  
 
 	}
 

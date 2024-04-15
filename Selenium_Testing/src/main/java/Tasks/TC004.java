@@ -1,4 +1,4 @@
-package Practice;
+package Tasks;
 
 import java.awt.Dimension;
 

@@ -1,4 +1,4 @@
-package Practice;
+package Tasks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
